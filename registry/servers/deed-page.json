@@ -1,0 +1,33 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.milisp.mcp-linker/deed-page",
+  "title": "deed.page",
+  "description": "Publish static files to a permanent https://<slug>.deed.page URL. No account or sign-in.",
+  "version": "1.0.0",
+  "websiteUrl": "https://deed.page",
+  "icons": [
+    {
+      "src": "https://cdn.jsdelivr.net/gh/milisp/mcp-linker@main/registry/icons/deed-page.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": [
+        "any"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://deed.page/mcp"
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "io.github.milisp.mcp-linker": {
+        "configName": "deed-page",
+        "category": "Infrastructure & DevOps",
+        "official": true,
+        "fullDescription": "deed.page's hosted static-hosting MCP server (Streamable HTTP, no OAuth). publish_site takes files and a slug and returns a permanent https://<slug>.deed.page/ URL plus a site token; later calls send that token to change the site. Write tools: publish_site, update_site, delete_site, restore_version, plan_upload/finalize_upload for larger sites, add_domain/remove_domain, set_site_access, set_listing, create_webhook/delete_webhook, rotate_token/revoke_token. Read tools: get_site, list_sites, list_versions, get_manifest, domain_status, list_domains, site_analytics, list_webhooks, whoami, get_upgrade_link. Published files are public on the web (password protection is on paid plans only). The free plan allows 25 sites of up to 25 MB each and 60 publishes per hour; no tool runs commands on the user's machine."
+      }
+    }
+  }
+}
